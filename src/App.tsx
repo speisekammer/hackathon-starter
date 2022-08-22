@@ -1,8 +1,10 @@
 import "./App.css";
-import items from "./ExampleData.js";
+import ExampleItems from "./ExampleItems";
+import {ItemAttributeSet} from "./ItemAttributeSet";
+import Item from "./Item";
 
 // render an item
-const ItemBlock = (item) => (
+const ItemBlock = (item: Item) => (
   <div style={{ clear: "both" }} key={item.gtin}>
     <img
       src={item.productImageUrl}
@@ -12,11 +14,11 @@ const ItemBlock = (item) => (
     {item.getCount()}x {item.contentString()} {item.name}
     <br />
     <ul style={{ listStyleType: "none", fontSize: "16px" }}>
-      {item.itemSet.map((set, idx) => {
+      {item.itemSet.map((set: ItemAttributeSet, idx: number) => {
         return (
           <li key={idx}>{`${
             set.count
-          }x with date ${set.date
+          }x with date ${set.expires
             .toISOString()
             .slice(0, 10)
             .replace(/-/g, "/")}`}</li>
@@ -33,10 +35,10 @@ function App() {
       <header className="App-header">
         <h1>Pantry Overview</h1>{" "}
         <ul style={{ listStyleType: "none" }}>
-          <li>{items.map((item) => ItemBlock(item))}</li>
+          <li>{ExampleItems.map((item) => ItemBlock(item))}</li>
         </ul>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
           className="App-link"

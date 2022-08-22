@@ -1,7 +1,7 @@
 import Item from "./Item";
 
 // Define some example products. Data is taken from openfoodfacts.org
-const items = [
+const ExampleItems = [
   new Item({
     gtin: "4003586104892",
     name: "Kessel Chips Cross Cut Ranch",
@@ -37,20 +37,20 @@ const items = [
 ];
 
 // Add some expiration dates
-items[0].clearItemSet();
-items[0].addSet(5, new Date());
-items[0].addSet(2, new Date("August 19, 2019 23:15:30"));
-items[0].addSet(3, new Date("December 24, 2020 20:15:00"));
+ExampleItems[0].clearItemSet();
+ExampleItems[0].addSet(5, new Date());
+ExampleItems[0].addSet(2, new Date("August 19, 2019 23:15:30"));
+ExampleItems[0].addSet(3, new Date("December 24, 2020 20:15:00"));
 
-items[1].clearItemSet();
-items[1].addSet(1, new Date("September 01, 2020 20:15:30"));
+ExampleItems[1].clearItemSet();
+ExampleItems[1].addSet(1, new Date("September 01, 2020 20:15:30"));
 
-items[2].clearItemSet();
-items[2].addSet(1, new Date("August 01, 2020 20:15:30"));
-items[2].addSet(1, new Date("March 01, 2021 20:15:30"));
+ExampleItems[2].clearItemSet();
+ExampleItems[2].addSet(1, new Date("August 01, 2020 20:15:30"));
+ExampleItems[2].addSet(1, new Date("March 01, 2021 20:15:30"));
 
-items[3].clearItemSet();
-items[3].addSet(20, new Date("January 18, 2018 20:01:30"));
-items[3].addSet(18, new Date("February 12, 2018 12:15:30"));
+ExampleItems[3].clearItemSet();
+ExampleItems[3].addSet(20, new Date("January 18, 2018 20:01:30"));
+ExampleItems[3].addSet(18, new Date("February 12, 2018 12:15:30"));
 
-export default items;
+export default ExampleItems;
